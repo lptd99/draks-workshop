@@ -1,0 +1,11 @@
+Cyclone_Example 0.1.1:
+	Fix : Added error handling while spawning objects.
+Cyclone_Example 0.1.2:
+	Change : Cyclone.Projectile example.
+Cyclone_Example 0.1.3:
+	Change : Added another window example.
+	Change : Added the explosion dimensions to the projectile example
+Cyclone_Example 0.1.4:
+	Change : Made the projectile example better and added the new variables
+	Fix : Itemwindow giving errors (Fixed in Cyclone)
+	Fix : Itemwindow giving wrong items when the names share words

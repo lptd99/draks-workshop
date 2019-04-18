@@ -1,0 +1,73 @@
+Cyclone 0.1.1:
+	Change : Added rawremove sub-command to the item command.
+	Change : Cyclone.terminal.write can now be written as Cyclone.w
+	Change : Added teleporter command.
+	Change : Added teleporter sub-command to the teleport command.
+	Change : The cursor now fades away. The timer can be changed from options.
+	Change : Added Cyclone.util.table.iremove().
+	Change : Added the fix option that when enabled fixes some vanilla "bugs".
+	Change : Added twindow command.
+	Change : Cyclone.terminal.getInput() has been replaced with the Cyclone.input table.
+	Fix : Terminal button not working when clicked.
+	Fix : Pausing no longer consume the timestop and cooldowns.
+	Fix : Pausing is no longer persistent.
+	Fix : Added special case fallback for unpausing.
+	Fix : Teleport accepting non-valid player indexes.
+	Fix : Added error handling to lua.
+Cyclone 0.1.2:
+	Change : Added Cyclone.Projectile.
+	Change : Added Delete, Home, End key support for vir.
+	Change : Added no-launcher option.
+	Fix : Fixed fix.
+	Fix : Fixed improper input use in vir.
+Cyclone 0.1.3:
+	Change : vir :w now supports filenames.
+	Change : Added move sub-command to twindow.
+	Change : Added panning windows with CTRL-Drag. (Reset with single middle click)
+	Change : Added Cyclone.wmclient.deleteWindow(<window>)
+	Fix : Fixed configuring the life of the projectile while it is dead breaking stuff.
+	Fix : Projectiles no longer use Sprite.find but store the sprites in a table.
+	Fix : Replaced Sprite.find functions in the classes.
+	Fix : Fixed twindow resize not working.
+	Fix : Fixed opening files that doesn't exist causing an error in vir.
+	Fix : Fixed Buttons not having default text values.
+	Fix : Fixed buttons not acting according to panning.
+	Fix : Fixed vir cursor displaying on the wrong place on long lines.
+	Fix : god command only gives 1 whip now since it doesn't stack for some reason.
+Cyclone 0.1.4:
+	Change : Revamped terminal command parsing. Now it accepts quotations for entering whitespace characters.
+	Change : Item has been tweaked to both accept item names without spaces and as quoted names
+	Change : Projectile w and h has been swapped to mask in order to improve performance and reduce clutter.
+	Change : Projectile now has 3 death sprites and the dead variable states the cause of death.
+	Change : Projectiles now have teams
+	Change : Projectiles now have hit_number and total_hit_number
+	Change : Added Projectile.getParent()
+	Change : Added projectile variables including rotate and impact_explosion and damager_variables
+	Change : Terminal now has command history
+	Fix : Changed the control draw calls to use their boundaries instead of calculating again.
+	Fix : Projectiles now properly utilise spriteSpeed.
+	Fix : Buttons without text no longer cause trouble.
+	Fix : Centered the controls sprite.
+Cyclone 0.1.5:
+	Change : Added Projectile.aim
+	Change : Projectiles no longer use xscale when moving. Instead the speed is set with the xscale of the parent or the direction given.
+	Change : Added the kill command.
+	Change : ForceBuff is now stand alone and can be used like the projectile library.
+	Change : Projectile export edge case fixed.
+	Change : Buff-specific range no longer exists.
+	Fix : Fixed projectile rotation
+	Fix : Removed leftover file.
+Cyclone 0.2.0:
+	Change : Cyclone overhaul. Made the non-gui parts standalone under CycloneLib. Cyclone functions still can be used like normal.
+	Change : Projectile storage is now reset every minute instead of frame..
+	Change : Made the launcher buttons have a lighter color.
+	Change : Added real_damage option to show the real damage of attacks.
+	Change : Added qspawn and spawn sub-commands to the item command.
+	Change : Terminal is now hidden from the launcher by default.
+	Change : Removed the very bad moveInstance method.
+	Change : Added multiple functions to util including raycast and vectorToAngle.
+	Change : Added Vector2 class.
+	Change : Added the emptyclass file used for new classes.
+	Fix : Projectiles accelerating in the wrong direction.
+	Fix : Fixed the ForceBuff buff render for instances without masks since it no longer uses the Rectangle class.
+	Trivial : gfb now also exists in util.

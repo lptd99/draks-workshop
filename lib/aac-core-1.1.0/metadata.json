@@ -1,0 +1,7 @@
+{
+    "name": "AaC - Core",
+	"internalname": "aac-core",
+    "description": "Core mod for Accessories and Consumables. Provides libraries and functionality.\nOn its own this mod will not provide any new gameplay content.",
+    "version": "1.1.0",
+    "author": "Zarah",
+}

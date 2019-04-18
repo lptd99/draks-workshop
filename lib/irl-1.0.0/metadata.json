@@ -1,0 +1,7 @@
+{
+    "name": "Item Removal Library",
+	"internalname": "item-removal-lib",
+    "description": "Provides basic functionality for removing items and their effects from the player cleanly.",
+    "version": "1.0.0",
+    "author": "Zarah",
+}

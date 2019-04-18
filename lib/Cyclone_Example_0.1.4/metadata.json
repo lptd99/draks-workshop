@@ -1,0 +1,14 @@
+{
+"name":"Cyclone Example",
+"internalname":"cyclone_example",
+"version":"0.1.4",
+"Description":"Example command and window for the Cyclone Mod",
+"author":"none",
+"dependencies": [
+	{
+	"name": "Cyclone",
+	"version": "0.1.4",
+	"optional": false
+	}
+]
+}

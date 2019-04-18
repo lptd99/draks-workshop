@@ -1,0 +1,14 @@
+{
+"name":"Cyclone",
+"internalname":"Cyclone",
+"version":"0.2.0",
+"Description":"Cyclone is a multipurpose library/gui to provide easier modding and interactions for the game.",
+"author":"none",
+"dependencies": [
+	{
+	"name": "item-removal-lib",
+	"version": "1.0",
+	"optional": true
+	}
+]
+}

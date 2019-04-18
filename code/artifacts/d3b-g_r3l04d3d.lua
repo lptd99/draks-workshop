@@ -1,0 +1,33 @@
+local artifact = Artifact.new("D3B-G R3L04D3D")
+artifact.unlocked = true
+artifact.loadoutSprite = Sprite.load("sprites/artifacts/d3b-g_r3l04d3d.png", 2, 18, 18)
+artifact.loadoutText = "DEBUG YOUR MODS! ON STEROIDS! (Infinite Health and Shield + Items Galore!)"
+
+registercallback("onPlayerInit", function(player)
+    if artifact.active then
+        player:set("maxhpcap", 5000)
+        player:set("maxhp", 5000)
+        player:set("maxshieldcap", 5000)
+        player:set("maxshield", 5000)
+        player:set("hp", 5000)
+        player:set("shield", 5000)
+        local item9 = Item.find("Alien Head", "vanilla")
+        player:giveItem(item9, 10)
+        local item5 = Item.find("Soldier's Syringe", "vanilla")
+        player:giveItem(item5, 15)
+        local item1 = Item.find("Guardian's Heart", "vanilla")
+        player:giveItem(item1, 10)
+        local item2 = Item.find("Infusion", "vanilla")
+        player:giveItem(item2, 29)
+        local item3 = Item.find("Hopoo Feather", "vanilla")
+        player:giveItem(item3, 10)
+        local item4 = Item.find("Paul's Goat Hoof", "vanilla")
+        player:giveItem(item4, 20)
+        local item6 = Item.find("Dio's Friend", "vanilla")
+        player:giveItem(item6, 1)
+        local item7 = Item.find("Mysterious Vial", "vanilla")
+        player:giveItem(item7, 33)
+        local item8 = Item.find("56 Leaf Clover", "vanilla")
+        player:giveItem(item8, 60)
+    end
+end, 10)

@@ -1,0 +1,14 @@
+{
+    "name": "Drak's Workshop",
+    "internalname": "drak's_workshop",
+    "description": "Adds everything Tyo Drak has worked on",
+    "version": "0.0.1",
+    "author": "Tyo Drak",
+	"dependencies": [
+		{
+			"name": "item-removal-lib",
+			"version": "1.0.0",
+			"optional": true,
+		}
+	]
+}
