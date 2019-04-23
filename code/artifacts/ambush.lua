@@ -16,7 +16,7 @@ registercallback("onStageEntry", function(actor)
 			if teleInst ~= nil then
 			--this part of the code multiplies maxtime by 2, the maxtime is the amount of time the teleporter event takes
 			--if this value was 0, the teleporter would be activated and instantly ready for the player to go to the next level
-			teleInst:set("maxtime", teleInst:get("maxtime") * 1.5)
+			teleInst:set("maxtime", teleInst:get("maxtime"))
 			--gets each specific player (each player in a multiplayer game is different) and makes the y value match the teleporter 
 			--(7 is taken from the y value so the player doesnt get stuck in the ground)
 			--the x value is randomized to be slightly more or less than the teleporter, just for easthetics sake

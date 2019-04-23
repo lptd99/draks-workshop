@@ -74,7 +74,7 @@ local function floodInst(inst)
 	inst:set("za-flooded", 1)
 	clone = true
 	for i = 1, 2, 1 do
-		adjustBaseStats(inst, i*i/2)
+		adjustBaseStats(inst, 20*i)
 		cloneInst(inst, inst.x + i * 4, inst.y)
 	end
 	clone = false
@@ -130,7 +130,6 @@ local function validateInstance(inst)
 end
 
 local lastEnemyKilled
-local 
 
 registercallback("onNPCDeath", function(npc)
 	if artifact.active then

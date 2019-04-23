@@ -24,29 +24,46 @@ boss_pool:add(Item.find("Legendary Spark"))
 
 registered = {}
 
+local find_relic = Item.find("Vault Relic")
+
 registercallback("onPlayerInit", function(player)
 	p_boss_count = 0;
 end)
 
+local function give(player, item)
+	if player:countItem(item) > 0 and item ~= find_relic and player:countItem(item) < 100 then
+		item:getObject():create(player.x, player.y)
+	end
+end
+
+local function give_from_list(player, list)
+	for _, item in ipairs(list:toList()) do
+		give(player, item)
+	end
+end
+
+local player
+
 registercallback("onPlayerStep", function(player)
-	if player:countItem(Item.find("Vault Relic")) > 0 then
-		if math.random(1, 1000) <= (15 + player:countItem(Item.find("Vault Relic")) * 5) then
-			if (player:get("boss_count") > p_boss_count) then
-				for i=1, player:get("boss_count") - p_boss_count, 1 do
-					for _, pool in ipairs({common_pool, uncommon_pool, rare_pool, boss_pool}) do
-						for _, item in ipairs(pool:toList()) do
-							if player:countItem(item) > 0 and item ~= Item.find("Vault Relic") and player:countItem(item) < 100 then
-								player:giveItem(item)
-							end
-						end
-					end
-				end
-				p_boss_count = player:get("boss_count")
+	local p_vault_relics = player:countItem(find_relic)
+	if p_vault_relics > 0 then
+		for i=1, player:get("boss_count") - p_boss_count, 1 do
+			p_boss_count = p_boss_count + 1
+			local dice = math.random(1, 10000)
+			-- chance_common = 4.00% + 1.00 * relic - 0
+			if dice <= (400 + 100 * p_vault_relics - 0) then
+				give_from_list(player, common_pool)
+				
 			end
-		else
-			p_boss_count = player:get("boss_count")
+			-- uncommon = 2.00% + 0.50 * relic - 5
+			if p_vault_relics > 5 and dice <= (200 + 50 * (p_vault_relics - 5) ) then
+				give_from_list(player, uncommon_pool)
+			end
+			-- chance_common = 1.00% + 0.25 * relic - 10
+			if p_vault_relics > 10 and dice <= (100 + 25 * (p_vault_relics - 10) ) then
+				give_from_list(player, rare_pool)
+			end
 		end
-	else
 		p_boss_count = player:get("boss_count")
 	end
 end)
